@@ -39,7 +39,8 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!activeTimer) return;
-    const start = new Date(activeTimer.start_time).getTime();
+    const utc = activeTimer.start_time.endsWith('Z') ? activeTimer.start_time : activeTimer.start_time + 'Z';
+    const start = new Date(utc).getTime();
     const interval = setInterval(() => setElapsed(Math.floor((Date.now() - start) / 1000)), 1000);
     return () => clearInterval(interval);
   }, [activeTimer]);
