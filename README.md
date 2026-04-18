@@ -1,7 +1,7 @@
 # TimeTracker Pro
 
 Aplicație de time tracking și management proiecte pentru echipe mici.
-
+ 
 ## Funcționalități
 - ⏱️ Timer start/stop pe proiecte și taskuri
 - 👥 Gestionare clienți
