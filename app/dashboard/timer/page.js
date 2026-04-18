@@ -31,7 +31,7 @@ export default function TimerPage() {
 
   useEffect(() => {
     if (!active) return;
-    const start = new Date(active.start_time).getTime();
+    const start = new Date(active.start_time.endsWith('Z') ? active.start_time : active.start_time + 'Z').getTime();
     setElapsed(Math.floor((Date.now() - start) / 1000));
     const iv = setInterval(() => setElapsed(Math.floor((Date.now() - start) / 1000)), 1000);
     return () => clearInterval(iv);
